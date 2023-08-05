@@ -1,5 +1,6 @@
 package pe.idat.ztore.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -43,21 +44,16 @@ import javax.persistence.JoinColumn;
 public class Customer{
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
-	private String email;
-	private String password;
-	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "user_role", 
-			joinColumns = {
-					@JoinColumn(name = "user_id")
-			},
-			inverseJoinColumns = {
-					@JoinColumn(name = "role_id")
-			}
-	)
-	private Set<Role> roles;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String username;
+
+    private String password;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    private List<Role> roles = new ArrayList<>();
 
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Order> orders;

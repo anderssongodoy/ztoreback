@@ -10,5 +10,6 @@ import pe.idat.ztore.model.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long>{
 
-	Optional<Customer> findByEmail(String email);
+	Optional<Customer> findByUsername(String username);
+	 Boolean existsByUsername(String username);
 }
