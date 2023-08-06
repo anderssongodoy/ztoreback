@@ -47,7 +47,7 @@ public class Order {
 	@ManyToOne
     @JoinColumn(name = "id_customer", insertable = false, updatable = false)
     @JsonIgnore
-    private Customer customer;
+    private UserEntity customer;
 
 	
 	

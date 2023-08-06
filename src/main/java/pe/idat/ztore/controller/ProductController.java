@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.idat.ztore.model.Product;
 import pe.idat.ztore.model.Product;
 import pe.idat.ztore.service.impl.ProductServiceImpl;
 
@@ -28,6 +30,20 @@ private final ProductServiceImpl productService;
 	public ProductController(ProductServiceImpl productService) {
 		this.productService = productService;
 	}
+
+    @PostMapping("")
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
+        try {
+            if (product == null) {
+                return ResponseEntity.badRequest().body(null);
+            }
+
+            Product savedProduct = productService.save(product);
+            return ResponseEntity.ok(savedProduct);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 	
 	@GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
