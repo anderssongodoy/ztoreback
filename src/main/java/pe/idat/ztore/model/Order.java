@@ -49,10 +49,7 @@ public class Order {
 	
 	@ManyToOne
     @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    @JsonIgnore
     private UserEntity customer;
 
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<DetailsOrder> detailsOrders;
 	
 }

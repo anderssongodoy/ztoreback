@@ -38,12 +38,10 @@ public class DetailsOrder {
 	
 	@ManyToOne
     @JoinColumn(name = "id_order", insertable = false, updatable = false)
-    @JsonIgnore
 	private Order order;
 	
 	@ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
-    @JsonIgnore
 	private Product product;
 
 	

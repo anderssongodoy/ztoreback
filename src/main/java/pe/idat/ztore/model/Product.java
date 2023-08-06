@@ -41,12 +41,6 @@ public class Product {
 	
 	@ManyToOne
     @JoinColumn(name = "id_category", insertable = false, updatable = false)
-    @JsonIgnore
 	private Category category;
-
-	@ManyToOne
-    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    @JsonIgnore
-	private UserEntity customer;
 	
 }

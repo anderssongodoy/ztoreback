@@ -34,12 +34,13 @@ public class SecurityConfig {
                         "/swagger-ui/**",
                         "/webjars/**",
                         "/swagger-ui.html",
-                        "/v3/api-docs/**"
+                        "/v3/api-docs/**",
+                        "/cart/**"
                 )
                 .permitAll()
                .antMatchers(
-                       "/product/**")
-                .hasRole("USER")
+                       "/product/**", "/order/**", "/details-order/**")
+                .hasAnyRole("USER", "ADMIN")
                 .antMatchers(
                         "/category/**")
                 .hasRole("ADMIN")

@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "417c8355-6c85-4659-a3a5-bbcc741fe526",
+		"name": "ZTORE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24234008"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"garciagodoy\",\r\n    \"password\":\"garciagodoy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"garciagodoy\",\r\n  \"password\": \"garciagodoy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/authenticate"
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"godoygarcia\",\r\n  \"password\": \"godoygarcia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/authenticate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORY",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/category"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Categoria7\",\r\n  \"name\": \"Categoria7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/category"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n        \"description\": \"Categoria4\",\r\n        \"name\": \"Categoria4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/category/1"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Categoria6\",\r\n    \"name\": \"Categoria6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/category/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDER",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/order"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"date\": \"2023-08-06T15:41:47.609Z\",\r\n  \"subtotal\": 200,\r\n  \"status\": \"To pay\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/order"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/product"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Producto3\",\r\n  \"description\": \"Producto3\",\r\n  \"precio\": 2000,\r\n  \"image\": \"string\",\r\n  \"category\": {\r\n    \"id\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/product"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/product/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"godoygarcia\",\r\n  \"role\": [\r\n    \"Admin\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/user"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/user/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CART",
+			"item": [
+				{
+					"name": "ADD PRODUCT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"product\": {\r\n    \"id\": 1\r\n  },\r\n  \"customer\": {\r\n        \"id\": 1\r\n    },\r\n  \"amount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/cart"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DETAILS-ORDER",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/details-order"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWQiOjEsInVzZXJuYW1lIjoiZ2FyY2lhZ29kb3kiLCJzdWIiOiJnYXJjaWFnb2RveSIsImlhdCI6MTY5MTMzNTEyNiwiZXhwIjoxNjkxNDIxNTI2fQ.Yn9K1_CDzON7pebD8xTq7U3gtfgOAVOobJLYSBd6Ryw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 1,\r\n  \"order\": {\r\n    \"id\": 1\r\n  },\r\n  \"product\": {\r\n    \"id\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/details-order"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
