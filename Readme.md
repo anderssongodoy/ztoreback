@@ -1,1 +1,9 @@
+COLECCION PARA POSTMAN EN EL REPOSITORIO
+ESPERO ALCANCE PARA LOGRAR PASAR EL FILTRO MUCHAS GRACIAS POR EL RETO
+
+LINK PARA SWAGGER
 http://localhost:8080/api/swagger-ui/index.html
+
+MODELADO DE LA BASE DE DATOS
+![image](https://github.com/anderssongodoy/ztoreback/assets/86135000/2acc2bf9-0660-41f0-95d1-2ec69c1cf870)
+
