@@ -33,6 +33,8 @@ public class DetailsOrder {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
+
+	private int amount;
 	
 	@ManyToOne
     @JoinColumn(name = "id_order", insertable = false, updatable = false)

@@ -1,22 +1,24 @@
 package pe.idat.ztore.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @Entity
@@ -25,28 +27,19 @@ import lombok.NoArgsConstructor;
 @Where(clause = "soft_delete = false")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
-
-	@Id
+public class Cart {
+    @Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
-	private String name;
-	private String description;
-	private Double price;
-	private String image;
-	private int stock;
-	
-	@Column( name="soft_delete")
-	private Boolean softDelete  = Boolean.FALSE;
-	
-	@ManyToOne
-    @JoinColumn(name = "id_category", insertable = false, updatable = false)
-    @JsonIgnore
-	private Category category;
+    private Long id;
 
-	@ManyToOne
-    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    @JsonIgnore
-	private UserEntity customer;
-	
+    @ManyToOne(optional = false, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    private Product product;
+    
+    @ManyToOne(optional = false, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    private UserEntity customer;
+    
+    private int amount;
+
+    @Column( name="soft_delete")
+	private Boolean softDelete  = Boolean.FALSE;
 }

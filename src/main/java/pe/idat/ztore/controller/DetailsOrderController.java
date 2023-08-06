@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.idat.ztore.model.DetailsOrder;
-import pe.idat.ztore.model.DetailsOrder;
 import pe.idat.ztore.service.impl.DetailsOrderServiceImpl;
 
 @RestController

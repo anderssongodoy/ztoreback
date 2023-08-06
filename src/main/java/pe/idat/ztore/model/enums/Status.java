@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum Status {
 
-	ACCEPTED ("Accepted"),
     TO_PAY ("To pay"),
     PAYED ("Payed");
 

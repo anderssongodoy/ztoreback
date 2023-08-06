@@ -43,6 +43,9 @@ public class UserEntity implements UserDetails {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Order> orders;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Product> products;
+
     @Column(name = "soft_delete")
     private Boolean softDelete = Boolean.FALSE;
 
